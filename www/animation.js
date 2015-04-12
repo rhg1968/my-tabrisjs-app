@@ -23,6 +23,14 @@ var canvas = tabris.create("Canvas", {
   example.init(ctx);
 }).appendTo(page);
 
+tabris.create("ToggleButton", {
+    layoutData: {left: 100, bottom: 10},
+    text: "selected",
+    selection: true
+}).on("change:selection", function(button, selection) {
+    this.set("text", selection ? "selected" : "not selected");
+}).appendTo(page);
+
 page.on("disappear", function() {
   example.stop();
   button.set("text", "Start");
