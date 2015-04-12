@@ -28,7 +28,7 @@ tabris.create("ToggleButton", {
     text: "selected",
     selection: true
 }).on("change:selection", function(button, selection) {
-    this.set("text", selection ? "selected" : "not selected");
+    this.set("text", this.get("selection") ? "selected" : "not selected");
 }).appendTo(page);
 
 page.on("disappear", function() {
